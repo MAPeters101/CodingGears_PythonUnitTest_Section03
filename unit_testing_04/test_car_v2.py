@@ -40,14 +40,12 @@ class TestCarFunctionality(unittest.TestCase):
         car1.apply_breaks(apply_break_for_in_seconds)
         self.assertEqual(car1.speed, (55 - apply_break_for_in_seconds * car1.decrease_in_speed_per_second_of_breaks))
 
-    def test_check_usb_port(self):
+    def test_check_usb_port_base_car_trim(self):
         car1 = Car("VW", "Passat", "2017")
-        car1.start()
-        self.assertEqual(car1.isEngineStarted, True)
-        usb = car1.usb_port
-        if usb:
-            print("The car has a USB port. Test Passed!")
-        else:
-            print("The car has no USB port. Test Failed!")
+        self.assertEqual(car1.usb_port, False)
 
+    def test_check_usb_port_premium_car_trim(self):
+        car1 = Car("VW", "Passat", "2017")
+        car1.usb_port = True
+        self.assertEqual(car1.usb_port, True)
 
