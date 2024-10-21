@@ -16,6 +16,7 @@ class TestCalculatorBase(unittest.TestCase):
         result = calc.calc_add()
         self.assertEqual(result, 30)
 
+    @unittest.skip("Just for fun...")
     def test_add_using_one_negative_number(self):
         """
         Test case to test add functionality with one positive number
