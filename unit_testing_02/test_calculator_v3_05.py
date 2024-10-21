@@ -40,10 +40,12 @@ test_results = runner.run(suite)
 total_ran = test_results.testsRun
 total_skipped = len(test_results.skipped)
 total_errors = len(test_results.errors)
+total_failed = len(test_results.failures)
 
-print("Total Ran : " + str(total_ran))
-print("Total Skipped : " + str(total_skipped))
-print("Total Errors : " + str(total_errors))
+print("Total Ran        : " + str(total_ran))
+print("Total Skipped    : " + str(total_skipped))
+print("Total Errors     : " + str(total_errors))
+print("Total Failed     : " + str(total_failed))
 
 
 

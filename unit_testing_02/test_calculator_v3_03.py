@@ -18,7 +18,7 @@ class TestCalculatorAddFunctionality(unittest.TestCase):
     def test_add_two_negative_numbers(self):
         calc = Calculator(-10, -20)
         result = calc.calc_add()
-        self.assertEqual(result, -30)
+        self.assertEqual(result, -300)
 
     def test_add_two_positive_decimal_numbers(self):
         calc = Calculator(10.55, 20.97)
