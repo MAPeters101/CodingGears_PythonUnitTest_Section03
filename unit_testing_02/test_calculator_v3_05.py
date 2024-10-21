@@ -26,14 +26,26 @@ suite = unittest.TestSuite()
 # 4. Add Test Cases to the TestSuite instance
 # >> Load test cases from a module
 suite.addTests(loader.loadTestsFromModule(test_calculator_v3_01))
+suite.addTests(loader.loadTestsFromModule(test_calculator_v3_02))
 
 # >> Load test cases from a class
+suite.addTests(loader.loadTestsFromTestCase(test_calculator_v3_03.TestCalculatorAddFunctionality))
 
 # 5. Create an instance of the TextTestRunner
-runner = unittest.TextTestRunner()
+runner = unittest.TextTestRunner(verbosity=1)
 
 # 6. Run the TextTestRunner instance
-runner.run(suite)
+test_results = runner.run(suite)
+
+total_ran = test_results.testsRun
+total_skipped = len(test_results.skipped)
+total_errors = len(test_results.errors)
+
+print("Total Ran : " + str(total_ran))
+print("Total Skipped : " + str(total_skipped))
+print("Total Errors : " + str(total_errors))
+
+
 
 
 
